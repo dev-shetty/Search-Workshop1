@@ -1,16 +1,17 @@
 # Setting up Git:
+
 ## Create a GitHub account
+
 https://github.com/
-
-
 
 Run following command to verify if git works on your computer:
 
     git --version
 
 ## Configure git:
-After installing git, to start using git from your computer, you must enter your credentials to identify 
-yourself as the author of your work. The username and email address should match the ones 
+
+After installing git, to start using git from your computer, you must enter your credentials to identify
+yourself as the author of your work. The username and email address should match the ones
 you use in GitHub.
 
 Add your username:
@@ -31,10 +32,10 @@ Add ssh keys to your GitHub account:
     2. cat ~/.ssh/id_ed25519.pub
     3. Visit this url: https://github.com/settings/ssh/new. Paste the key and save.
 
-
 ## Fork a repository
-Forking refers to making a copy of a project you want to contribute to. 
-Now lets fork a project provided to complete this activity. 
+
+Forking refers to making a copy of a project you want to contribute to.
+Now lets fork a project provided to complete this activity.
 
 Follow these steps to fork a project:
 
@@ -43,29 +44,41 @@ Follow these steps to fork a project:
 3. Select a namespace to fork the project.
 
 ## Clone a repository
-Cloning a repository means the files from the remote repository are downloaded to your computer, 
+
+Cloning a repository means the files from the remote repository are downloaded to your computer,
 and a connection is created.
 
-This connection requires you to add credentials. There are two ways to add credentials SSH and HTTPS. 
+This connection requires you to add credentials. There are two ways to add credentials SSH and HTTPS.
 We will be using SSH here.
 
 Authenticate with GitHub by following the instructions in the SSH documentation.
 
-1. Go to your project’s landing page and click Clone.
-2. Copy the URL for Clone with SSH.
-3. Open a terminal and go to the directory where you want to clone the files. Run this command:
+1.  Go to your project’s landing page and click Clone.
+2.  Copy the URL for Clone with SSH.
+3.  Open a terminal and go to the directory where you want to clone the files. Run this command:
 
         git clone <url_to_clone>
 
+It should look similar to this
+
+```bash
+origin  git@github.com:dev-shetty/Search-Workshop1.git (fetch)
+origin  git@github.com:dev-shetty/Search-Workshop1.git (push)
+upstream        git@github.com:UniCourt/Search-Workshop1.git (fetch)
+upstream        git@github.com:UniCourt/Search-Workshop1.git (push)
+```
 
 ## View your remote repositories
+
 To view the remote repositories that you have added, run following command:
-    cd <repo_name>
-    git remote -v
+cd <repo_name>
+git remote -v
+
 ## Configuring remote repositories
 
-We now need to configure our local system to the remote repositories in the git. 
-Generally two remote repositories are maintained origin and upstream. 
+We now need to configure our local system to the remote repositories in the git.
+Generally two remote repositories are maintained origin and upstream.
+
 - Origin is a clone of your forked repository, from which you push and pull.
 - Upstream is the repository you forked the repository from.
 
@@ -76,39 +89,38 @@ Run the following command to add an upstream repository and view it.
     git remote add upstream <upstream_clone_url>
     git remote -v
 
-
 ## Create a branch
-Branches allow you to develop features, fix bugs, or safely experiment with new ideas in a 
-contained area of your repository. You always create a branch from an existing branch. Typically, 
-you might create a new branch from the default branch of your repository.
 
+Branches allow you to develop features, fix bugs, or safely experiment with new ideas in a
+contained area of your repository. You always create a branch from an existing branch. Typically,
+you might create a new branch from the default branch of your repository.
 
 To create a new branch called test run the following command:
 
     git checkout -b test
 
-
 To switch to an existing branch we use the following command:
 
     git checkout <branch_name>
 
-
 ## Download the latest changes in the project
-To get an up-to-date copy of the project, we use pull command. This gets all the changes 
-made to the repository, since the last clone or pull. 
+
+To get an up-to-date copy of the project, we use pull command. This gets all the changes
+made to the repository, since the last clone or pull.
 
 To get all the latest updates run the following command:
 
     git pull upstream <branch_name>
 
+## View the changed files
 
-## View the changed files 
 This command displays the state of the working directory and the staging area.
 To check all the files you have changed run following command.
 
     git status
 
 ## Stage the local changes
+
 We use git add to add all/required files that are changed to the staging area.
 To stage a file that you have changed for commit run following command:
 
@@ -119,14 +131,16 @@ To stage all files in the current directory and subdirectory, we can use followi
     git add .
 
 ## Commit the staged files:
+
 The git commit command creates a snapshot of all the staged changes in the project history.
 Now to commit all the changes that are made run the following command:
 
     git commit -m "message"
+
 The message in the commit command must describe the intention of your commit.
 
-
 ## Send the changes to the remote repository
+
 Push command sends all the committed changes to the remote repository. To push all your changes to the remote repository run the following command:
 
     git push origin <branch_name>
@@ -138,9 +152,11 @@ To push your changes
 You can now go to github.com and see the updated code in your browser.
 
 ## Create a pull request:
-Pull request is the process of merging the changed version of code to its original version. A pull request allows us to visualize the differences between the original code and our proposed code changes. 
+
+Pull request is the process of merging the changed version of code to its original version. A pull request allows us to visualize the differences between the original code and our proposed code changes.
 
 Steps to create a pull request:
+
 1. When we push changes to the remote repository, git prompts us with a link to create a merge request. We can copy-paste the link in the browser or create a new pull request from the project page in the browser.
 
 2. Then select the base branch and compare branch that needs to be merged. The base branch is the one that has your changes and the compare branch is the original branch.
