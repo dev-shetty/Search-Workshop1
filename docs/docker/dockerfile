@@ -1,4 +1,4 @@
-# Using ubuntu official image from dockerhub
+# Using postgres image from dockerhub
 FROM postgres
 
 # Setting the environment variables like password and database
